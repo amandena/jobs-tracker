@@ -1,12 +1,16 @@
 import './App.css'
 import React from 'react'
 import JobsContainer from './containers/JobsContainer'
+// import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <div className='App'>
       Jobs Tracker
+      {/* <Header/> */}
       <JobsContainer/>
+      <Footer/>
     </div>
   )
 }

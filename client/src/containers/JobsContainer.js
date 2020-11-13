@@ -1,5 +1,6 @@
 import React from 'react'
 import Jobs from '../components/Jobs'
+import JobForm from '../components/JobForm'
 
 class JobsContainer extends React.Component {
   render() {
@@ -7,6 +8,7 @@ class JobsContainer extends React.Component {
       <div className='jobs-container'>
         JobsContainer
         <Jobs/>
+        <JobForm/>
       </div>
     )
   }

@@ -11,11 +11,11 @@ import mainReducer from './reducers/mainReducer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-// let reducers = combineReducers({
-  
-// })
+let reducers = combineReducers({
+  mainReducer
+})
 
-let store = createStore(mainReducer, composeEnhancers(applyMiddleware(thunk)))
+let store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>

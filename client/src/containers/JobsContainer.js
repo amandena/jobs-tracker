@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import Jobs from '../components/Jobs'
 import JobForm from '../components/JobForm'
 
@@ -7,8 +8,10 @@ class JobsContainer extends React.Component {
     return(
       <div className='jobs-container'>
         JobsContainer
-        <Jobs/>
-        <JobForm/>
+        <Switch>
+          <Route path='/jobs/new' component={JobForm}/>
+          <Route path='/jobs' component={Jobs}/>
+        </Switch>
       </div>
     )
   }

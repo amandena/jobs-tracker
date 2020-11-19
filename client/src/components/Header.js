@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return(
     <div className='header'>
-      Header
+      <Link to='#'>Applications</Link>
+      <Link to='#'>Goals</Link>
+      <Link to='#'>Add Job</Link>
     </div>
   )
 }

@@ -1,13 +1,13 @@
 import React from 'react'
 import Job from './Job'
 
-const Jobs = () => {
+const Applications = () => {
   return(
     <div>
-      Jobs
+      Applications
       <Job/>
     </div>
   ) 
 }
 
-export default Jobs
+export default Applications

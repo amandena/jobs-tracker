@@ -1,8 +1,9 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Job from '../components/Job'
-import Jobs from '../components/Jobs'
+import Applications from '../components/Applications'
 import JobForm from '../components/JobForm'
+import GoalsTracker from '../components/GoalsTracker'
 
 class JobsContainer extends React.Component {
   render() {
@@ -10,9 +11,10 @@ class JobsContainer extends React.Component {
       <div className='jobs-container'>
         JobsContainer
         <Switch>
+          <Route path='/applications-tracker' component={Applications}/>
           <Route path='/jobs/new' component={JobForm}/>
           <Route path='/jobs/:id' component={Job}/>
-          <Route path='/jobs' component={Jobs}/>
+          <Route path='/goals' component={GoalsTracker}/>
         </Switch>
       </div>
     )

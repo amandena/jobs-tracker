@@ -5,7 +5,7 @@ const Search = () => {
     <div className='search'>
       <form>
         <input type='text'/>
-        <input type='submit'/>
+        <input type='submit' value='Search'/>
       </form>
     </div>
   )

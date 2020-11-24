@@ -3,7 +3,7 @@ import React from 'react'
 const GoalsTracker = () => {
   return(
     <div>
-      <p>${} Applications for week of ${}</p>
+      <p>{} Applications for week of {}</p>
 
       <p>Jobs Applied to: </p>
       <p>Rejections: </p>

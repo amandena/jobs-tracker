@@ -3,9 +3,13 @@ import SocialMedia from './SocialMedia'
 
 const Footer = () => {
   return(
-    <div className='footer'>
-      <SocialMedia/>
-      <p>© 2020 Amanda M Johnson</p>
+    <div className='container'>
+      <div className='row spacer'>
+        <div className='col-12 text-center'>
+          <SocialMedia/>
+          <p>&copy; 2020 Amanda M Johnson</p>
+        </div>
+      </div>
     </div>
   )
 }

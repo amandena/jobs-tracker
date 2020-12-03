@@ -1,0 +1,17 @@
+.social-media  img { 
+  margin: 15px 15px 10px;
+}
+
+.social-media img:hover {
+  opacity: .7;
+}
+
+.medium {
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}

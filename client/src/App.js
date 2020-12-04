@@ -1,5 +1,6 @@
 import './App.css'
 import './stylesheets/footer.css'
+import './stylesheets/header.css'
 import React from 'react'
 import JobsContainer from './containers/JobsContainer'
 import Header from './components/Header'

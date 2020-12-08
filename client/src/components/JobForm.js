@@ -9,14 +9,16 @@ class JobForm extends React.Component {
           <div className="row form-group">
             <div className="col-8 offset-2 input-group spacer-xs">
               <input 
+                className="form-control input-lg"
                 type='text' 
                 placeholder='Date' 
                 name='date'
               />
             </div>
             
-            <div className="col-8 offset-2 input-group spacer-xs"></div>
+            <div className="col-8 offset-2 input-group spacer-xs">
               <input 
+                className="form-control input-lg"
                 type='text' 
                 placeholder='Company Name' 
                 name='companyName'
@@ -25,6 +27,7 @@ class JobForm extends React.Component {
             <br/>
             <div className="col-8 offset-2 input-group spacer-xs">
               <input
+                className="form-control input-lg"
                 type='text'
                 placeholder='Job Title'
                 name='jobTitle'
@@ -33,6 +36,7 @@ class JobForm extends React.Component {
             <br/>
             <div className="col-8 offset-2 input-group spacer-xs">
               <input
+                className="form-control input-lg"
                 type='text'
                 placeholder='Application URL'
                 name='applicationUrl'
@@ -41,6 +45,7 @@ class JobForm extends React.Component {
             <br/>
             <div className="col-8 offset-2 input-group spacer-xs">
               <input
+                className="form-control input-lg"
                 type='text'
                 placeholder='Referral Source'
                 name='referralSource'
@@ -49,6 +54,7 @@ class JobForm extends React.Component {
             <br/>
             <div className="col-8 offset-2 input-group spacer-xs">
               <input
+                className="form-control input-lg"
                 type='textarea'
                 placeholder='Notes'
                 name='notes'
@@ -57,6 +63,7 @@ class JobForm extends React.Component {
             <br/>
             <div className="col-8 offset-2 input-group spacer-xs">
               <input
+                className="form-control input-lg"
                 type='text'
                 placeholder='Application Status'
                 name='applicationStatus'
@@ -65,10 +72,11 @@ class JobForm extends React.Component {
             <br/>
             <div className="col-8 offset-2 input-group spacer-xs">
               <input
+                className="btn btn-secondary"
                 type='submit'
               />
             </div>
-          {/* </div> */}
+          </div>
         </form>
       </div>
     )

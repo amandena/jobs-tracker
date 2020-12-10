@@ -4,8 +4,8 @@ import Search from './Search'
 
 const Applications = () => {
   return(
-    <div>
-      Applications
+    <div className='applications container'>
+      <h3>Applications</h3>
       <Search/>
       <Job/>
     </div>

@@ -8,8 +8,7 @@ import GoalsTracker from '../components/GoalsTracker'
 class JobsContainer extends React.Component {
   render() {
     return(
-      <div className='jobs-container'>
-        JobsContainer
+      <div className='jobs container'>
         <Switch>
           <Route path='/applications-tracker' component={Applications}/>
           <Route path='/jobs/new' component={JobForm}/>

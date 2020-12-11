@@ -5,7 +5,7 @@ class JobForm extends React.Component {
     return(
       <div className='job-form container'>
         <div className="spacer"/>
-        <h3>Add A Job</h3>
+        <h3>New Job Application</h3>
         <form>
           <div className="row form-group">
             <div className="col-8 offset-2 input-group spacer-xs">

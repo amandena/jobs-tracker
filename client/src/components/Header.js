@@ -11,7 +11,7 @@ const Header = () => {
               <h1>Jobs Tracker</h1>
               <Link className="mainnav-link" to='/applications-tracker'>Applications</Link>
               <Link className="mainnav-link" to='/goals'>Goals</Link>
-              <Link className="mainnav-link" to='/jobs/new'>Add Job</Link>
+              <Link className="mainnav-link" to='/jobs/new'>New Job</Link>
             </div>
           </div>
         </div>

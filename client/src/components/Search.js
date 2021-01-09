@@ -1,6 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const Search = () => {
+const Search = ({ searchForm, updateSearchForm }) => {
+  const handleChange = e => {
+    const { name, value } = e.target
+    const updatedFormInfo = {
+      ...searchForm,
+      [name]: value
+    }
+    updateSearchForm(updatedFormInfo)
+  }
+
   return(
     <div className='search container'>
       <div className="spacer"/>
@@ -10,6 +20,9 @@ const Search = () => {
             <input 
               className="form-control input-lg"
               type='text'
+              name='searchBox'
+              // value={}
+              onChange={handleChange}
             />
           </div>
           <div className="col-8 offset-2 input-group spacer-xs">
@@ -25,4 +38,10 @@ const Search = () => {
   )
 }
 
-export default Search
+const mapStateToProps = state => {
+  return {
+    searchForm: state.mainReducer.searchForm
+  }
+}
+
+export default connect(mapStateToProps, { updateSearchForm })(Search)

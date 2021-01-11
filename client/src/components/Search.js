@@ -22,7 +22,7 @@ const Search = ({ searchForm, updateSearchForm }) => {
               className="form-control input-lg"
               type='text'
               name='searchBox'
-              // value={}
+              value={searchForm.searchBox}
               onChange={handleChange}
             />
           </div>

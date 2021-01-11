@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { updateSearchForm } from '../actions/updateSearchForm'
 
 const Search = ({ searchForm, updateSearchForm }) => {
   const handleChange = e => {

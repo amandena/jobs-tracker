@@ -20,6 +20,9 @@ export default function mainReducer(state = {
     case 'UPDATE_SEARCH_FORM':
       return {...state, searchForm: action.payload}
 
+    case 'UPDATE_JOB_FORM': 
+      return {...state, jobForm: action.payload}
+
     default:
       return state
   }

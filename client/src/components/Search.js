@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateSearchForm } from '../actions/updateSearchForm'
+import { doSearch } from '../actions/doSearch'
 
-const Search = ({ searchForm, updateSearchForm }) => {
+const Search = ({ searchForm, updateSearchForm, doSearch }) => {
   const handleChange = e => {
     const { name, value } = e.target
     const updatedFormInfo = {
@@ -12,10 +13,15 @@ const Search = ({ searchForm, updateSearchForm }) => {
     updateSearchForm(updatedFormInfo)
   }
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    doSearch(searchForm)
+  }
+
   return(
     <div className='search container'>
       <div className="spacer"/>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="row form-group">
           <div className="col-8 offset-2 input-group spacer-xs">
             <input 
@@ -45,4 +51,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateSearchForm })(Search)
+export default connect(mapStateToProps, { updateSearchForm, doSearch })(Search)

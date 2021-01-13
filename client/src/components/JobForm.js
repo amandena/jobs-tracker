@@ -1,7 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { updateJobForm } from '../actions/updateJobForm'
 
-class JobForm extends React.Component {
-  render() {
+const JobForm = ({ jobForm, updateJobForm }) => {
+  const handleChange = e => {
+    const { name, value } = e.target
+    const updatedFormInfo = {
+      ...jobForm,
+      [name]: value
+    }
+    updateJobForm(updatedFormInfo)
+  }
+
     return(
       <div className='job-form container'>
         <div className="spacer"/>
@@ -81,7 +91,12 @@ class JobForm extends React.Component {
         </form>
       </div>
     )
+}
+
+const mapStateToProps = state => {
+  return {
+    jobForm: state.mainReducer.jobForm
   }
 }
 
-export default JobForm
+export default connect(mapStateToProps, { updateJobForm })(JobForm)

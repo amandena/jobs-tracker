@@ -24,6 +24,8 @@ const JobForm = ({ jobForm, updateJobForm }) => {
                 type='text' 
                 placeholder='Date' 
                 name='date'
+                value={jobForm.date}
+                onChange={handleChange}
               />
             </div>
             
@@ -33,6 +35,8 @@ const JobForm = ({ jobForm, updateJobForm }) => {
                 type='text' 
                 placeholder='Company Name' 
                 name='companyName'
+                value={jobForm.companyName}
+                onChange={handleChange}
               />
             </div>
             <br/>
@@ -42,6 +46,8 @@ const JobForm = ({ jobForm, updateJobForm }) => {
                 type='text'
                 placeholder='Job Title'
                 name='jobTitle'
+                value={jobForm.jobTitle}
+                onChange={handleChange}
               />
             </div>
             <br/>
@@ -51,6 +57,8 @@ const JobForm = ({ jobForm, updateJobForm }) => {
                 type='text'
                 placeholder='Application URL'
                 name='applicationUrl'
+                value={jobForm.applicationUrl}
+                onChange={handleChange}
               />
             </div>
             <br/>
@@ -60,6 +68,8 @@ const JobForm = ({ jobForm, updateJobForm }) => {
                 type='text'
                 placeholder='Referral Source'
                 name='referralSource'
+                value={jobForm.referralSource}
+                onChange={handleChange}
               />
             </div>
             <br/>
@@ -69,6 +79,8 @@ const JobForm = ({ jobForm, updateJobForm }) => {
                 type='textarea'
                 placeholder='Notes'
                 name='notes'
+                value={jobForm.notes}
+                onChange={handleChange}
               />
             </div>
             <br/>
@@ -78,6 +90,8 @@ const JobForm = ({ jobForm, updateJobForm }) => {
                 type='text'
                 placeholder='Application Status'
                 name='applicationStatus'
+                value={jobForm.applicationStatus}
+                onChange={handleChange}
               />
             </div>
             <br/>

@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateJobForm } from '../actions/updateJobForm'
+import { addJob } from '../actions/addJob'
 
-const JobForm = ({ jobForm, updateJobForm }) => {
+const JobForm = ({ jobForm, updateJobForm, addJob }) => {
   const handleChange = e => {
     const { name, value } = e.target
     const updatedFormInfo = {
@@ -12,11 +13,16 @@ const JobForm = ({ jobForm, updateJobForm }) => {
     updateJobForm(updatedFormInfo)
   }
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    addJob(jobForm)
+  }
+
     return(
       <div className='job-form container'>
         <div className="spacer"/>
         <h3>New Job Application</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row form-group">
             <div className="col-8 offset-2 input-group spacer-xs">
               <input 
@@ -113,4 +119,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateJobForm })(JobForm)
+export default connect(mapStateToProps, { updateJobForm, addJob })(JobForm)

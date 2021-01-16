@@ -4,7 +4,7 @@ import SocialMedia from './SocialMedia'
 const Footer = () => {
   return(
     <footer>
-      <div className='container'>
+      <div className='footer container'>
         <div className='row spacer'>
           <div className='col-12 text-center'>
             <SocialMedia/>

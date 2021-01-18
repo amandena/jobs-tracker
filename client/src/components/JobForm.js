@@ -34,7 +34,6 @@ const JobForm = ({ jobForm, updateJobForm, addJob }) => {
                 onChange={handleChange}
               />
             </div>
-            
             <div className="col-8 offset-2 input-group spacer-xs">
               <input 
                 className="form-control input-lg"
@@ -100,8 +99,8 @@ const JobForm = ({ jobForm, updateJobForm, addJob }) => {
                 onChange={handleChange}
               />
             </div>
-            <br/>
-            <div className="col-8 offset-2 input-group spacer-xs">
+            <br/><br/>
+            <div className="col-8 offset-2 input-group spacer-xs justify-content-center">
               <input
                 className="btn btn-secondary"
                 type='submit'

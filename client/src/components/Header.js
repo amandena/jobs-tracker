@@ -8,7 +8,7 @@ const Header = () => {
         <div className="container-fluid">
           <div className="row mainnav-text text-center">
             <div className="col-sm-12">
-              <h1>Jobs Tracker</h1>
+              <Link to='/'><h1>Jobs Tracker</h1></Link>
               <Link className="mainnav-link" to='/applications-tracker'>Applications</Link>
               <Link className="mainnav-link" to='/goals'>Goals</Link>
               <Link className="mainnav-link" to='/jobs/new'>New Job</Link>

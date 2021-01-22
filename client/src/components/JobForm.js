@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { updateJobForm } from '../actions/updateJobForm'
 import { addJob } from '../actions/addJob'
 
-const JobForm = ({ jobForm, updateJobForm, addJob }) => {
+const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
   const handleChange = e => {
     const { name, value } = e.target
     const updatedFormInfo = {
@@ -15,7 +15,7 @@ const JobForm = ({ jobForm, updateJobForm, addJob }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    addJob(jobForm)
+    addJob(jobForm, history)
   }
 
     return(

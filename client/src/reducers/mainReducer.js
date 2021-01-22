@@ -24,6 +24,9 @@ export default function mainReducer(state = {
     case 'UPDATE_JOB_FORM': 
       return {...state, jobForm: action.payload}
 
+    case 'CLEAR_JOB_FORM':
+      return {...state, jobForm: initialJobState}
+
     case 'ADD_JOB':
       return {...state, jobs: state.jobs.concat(action.payload)}
 

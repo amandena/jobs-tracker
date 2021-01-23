@@ -20,13 +20,13 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
 
     return(
       <div className='job-form container'>
-        <div className="spacer"/>
+        <div className='spacer'/>
         <h3>New Job Application</h3>
         <form onSubmit={handleSubmit}>
-          <div className="row form-group">
-            <div className="col-8 offset-2 input-group spacer-xs">
+          <div className='row form-group'>
+            <div className='col-8 offset-2 input-group spacer-xs'>
               <input 
-                className="form-control input-lg"
+                className='form-control input-lg'
                 type='text' 
                 placeholder='Date' 
                 name='date'
@@ -34,9 +34,9 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
                 onChange={handleChange}
               />
             </div>
-            <div className="col-8 offset-2 input-group spacer-xs">
+            <div className='col-8 offset-2 input-group spacer-xs'>
               <input 
-                className="form-control input-lg"
+                className='form-control input-lg'
                 type='text' 
                 placeholder='Company Name' 
                 name='companyName'
@@ -45,9 +45,9 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
               />
             </div>
             <br/>
-            <div className="col-8 offset-2 input-group spacer-xs">
+            <div className='col-8 offset-2 input-group spacer-xs'>
               <input
-                className="form-control input-lg"
+                className='form-control input-lg'
                 type='text'
                 placeholder='Job Title'
                 name='jobTitle'
@@ -56,9 +56,9 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
               />
             </div>
             <br/>
-            <div className="col-8 offset-2 input-group spacer-xs">
+            <div className='col-8 offset-2 input-group spacer-xs'>
               <input
-                className="form-control input-lg"
+                className='form-control input-lg'
                 type='text'
                 placeholder='Application URL'
                 name='applicationUrl'
@@ -67,9 +67,9 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
               />
             </div>
             <br/>
-            <div className="col-8 offset-2 input-group spacer-xs">
+            <div className='col-8 offset-2 input-group spacer-xs'>
               <input
-                className="form-control input-lg"
+                className='form-control input-lg'
                 type='text'
                 placeholder='Referral Source'
                 name='referralSource'
@@ -78,9 +78,9 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
               />
             </div>
             <br/>
-            <div className="col-8 offset-2 input-group spacer-xs">
+            <div className='col-8 offset-2 input-group spacer-xs'>
               <input
-                className="form-control input-lg"
+                className='form-control input-lg'
                 type='textarea'
                 placeholder='Notes'
                 name='notes'
@@ -89,9 +89,9 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
               />
             </div>
             <br/>
-            <div className="col-8 offset-2 input-group spacer-xs">
+            <div className='col-8 offset-2 input-group spacer-xs'>
               <input
-                className="form-control input-lg"
+                className='form-control input-lg'
                 type='text'
                 placeholder='Application Status'
                 name='applicationStatus'
@@ -100,9 +100,9 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
               />
             </div>
             <br/><br/>
-            <div className="col-8 offset-2 input-group spacer-xs justify-content-center">
+            <div className='col-8 offset-2 input-group spacer-xs justify-content-center'>
               <input
-                className="btn btn-secondary"
+                className='btn btn-secondary'
                 type='submit'
               />
             </div>

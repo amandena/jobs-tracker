@@ -2,9 +2,9 @@ import React from 'react'
 
 const GoalsTracker = () => {
   return(
-    <div className="goals container">
-      <div className="row spacer">
-        <div className="col-12">
+    <div className='goals container'>
+      <div className='row spacer'>
+        <div className='col-12'>
           <h3>Goals</h3>
           <p>{} Applications for week of {}</p>
 

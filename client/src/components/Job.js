@@ -2,7 +2,7 @@ import React from 'react'
 
 const Job = () => {
   return(
-    <div className="job container">
+    <div className='job container'>
       Job
     </div>
   )

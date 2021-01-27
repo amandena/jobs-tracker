@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import Home from '../components/Home'
 import Job from '../components/Job'
 import Applications from '../components/Applications'
@@ -22,6 +22,6 @@ class JobsContainer extends React.Component {
   }
 }
 
-export default JobsContainer
+export default withRouter(JobsContainer)
 
 //make fetch request here for jobs to pass into Jobs and Job Routes

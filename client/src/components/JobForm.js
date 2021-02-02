@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateJobForm } from '../actions/updateJobForm'
 import { addJob } from '../actions/addJob'
+import ScrollArrow from './ScrollArrow'
 
 const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
   const handleChange = e => {
@@ -108,6 +109,7 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
             </div>
           </div>
         </form>
+        <ScrollArrow/>
       </div>
     )
 }

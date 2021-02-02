@@ -1,6 +1,7 @@
 import React from 'react'
 import Job from './Job'
 import Search from './Search'
+import ScrollArrow from './ScrollArrow'
 
 const Applications = () => {
   return(
@@ -8,6 +9,7 @@ const Applications = () => {
       <h3>Applications</h3>
       <Search/>
       <Job/>
+      <ScrollArrow/>
     </div>
   ) 
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollArrow from './ScrollArrow'
 
 const GoalsTracker = () => {
   return(
@@ -19,6 +20,7 @@ const GoalsTracker = () => {
           <p>Third Round: 1</p>
         </div>
       </div>
+      <ScrollArrow/>
     </div>
   )
 }

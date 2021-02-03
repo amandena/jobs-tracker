@@ -23,7 +23,7 @@ const Search = ({ searchForm, updateSearchForm, doSearch }) => {
       <div className='spacer'/>
       <form onSubmit={handleSubmit}>
         <div className='row form-group'>
-          <div className='col-md-8 offset-2 input-group spacer-xs'>
+          <div className='col-md-8 offset-2 spacer-xs'>
             <input 
               className='form-control input-lg'
               type='text'
@@ -33,7 +33,7 @@ const Search = ({ searchForm, updateSearchForm, doSearch }) => {
             />
           </div>
           <br/><br/>
-          <div className='col-8 offset-2 input-group spacer-xs justify-content-center'>
+          <div className='col-8 offset-2 spacer-xs justify-content-center'>
             <input 
               className='btn btn-secondary'
               type='submit' 

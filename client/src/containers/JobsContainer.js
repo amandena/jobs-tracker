@@ -4,7 +4,7 @@ import Home from '../components/Home'
 import Job from '../components/Job'
 import Applications from '../components/Applications'
 import JobForm from '../components/JobForm'
-import GoalsTracker from '../components/GoalsTracker'
+import ActivityTracker from '../components/ActivityTracker'
 import Redirect404 from '../components/Redirect404'
 
 class JobsContainer extends React.Component {
@@ -16,7 +16,7 @@ class JobsContainer extends React.Component {
           <Route path='/applications-tracker' component={Applications}/>
           <Route path='/jobs/new' component={JobForm}/>
           <Route path='/jobs/:id' component={Job}/>
-          <Route path='/goals' component={GoalsTracker}/>
+          <Route path='/activity-tracker' component={ActivityTracker}/>
           <Route path="*" component={Redirect404} />
         </Switch>
       </div>

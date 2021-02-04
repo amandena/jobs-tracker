@@ -4,7 +4,8 @@ import ScrollArrow from './ScrollArrow'
 const ActivityTracker = () => {
   return(
     <div className='goals container'>
-      <div className='row spacer'>
+      <div className='spacer'/>
+      <div className='row'>
         <div className='col-12'>
           <h3>Activity Tracker</h3>
         </div>

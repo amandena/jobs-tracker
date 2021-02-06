@@ -103,7 +103,7 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
             <br/><br/>
             <div className='col-8 offset-2 spacer-xs justify-content-center'>
               <input
-                className='btn btn-secondary'
+                className='btn btn-secondary mb-3'
                 type='submit'
               />
             </div>

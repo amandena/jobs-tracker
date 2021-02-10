@@ -23,14 +23,20 @@ const Search = ({ searchForm, updateSearchForm, doSearch }) => {
       <div className='spacer'/>
       <form onSubmit={handleSubmit}>
         <div className='row form-group'>
-          <div className='col-md-8 offset-2 spacer-xs'>
-            <input 
-              className='form-control input-lg'
-              type='text'
-              name='searchBox'
-              value={searchForm.searchBox}
-              onChange={handleChange}
-            />
+          <div className='col-md-8 offset-2 spacer-xs mb-2'>
+            <div className='form-floating'>
+              <input 
+                className='form-control input-lg'
+                id='searchFloat'
+                placeholder='Search'
+                type='text'
+                name='searchBox'
+                value={searchForm.searchBox}
+                onChange={handleChange}
+                autoComplete='off'
+              />
+              <label htmlFor='searchFloat'>Search</label>
+            </div>
           </div>
           <br/><br/>
           <div className='col-8 offset-2 spacer-xs justify-content-center'>

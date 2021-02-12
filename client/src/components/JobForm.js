@@ -1,8 +1,30 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import * as Yup from 'yup'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
 import { updateJobForm } from '../actions/updateJobForm'
 import { addJob } from '../actions/addJob'
 import ScrollArrow from './ScrollArrow'
+
+const jobFormSchema = Yup.object().shape({
+  date: Yup.string().required(),
+  companyName: Yup.string().required(),
+  jobTitle: Yup.string().required(),
+  applicationUrl: Yup.string().required(),
+  referralSource: Yup.string().required(),
+  notes: Yup.string().required(),
+  applicationStatus: Yup.string().required()
+})
+
+const jobFormInputs = [
+  {key: 'date', value: 'Date'},
+  {key: 'companyName', value: 'Company Name'},
+  {key: 'jobTitle', value: 'Job Title'},
+  {key: 'applicationUrl', value: 'Application URL'},
+  {key: 'referralSource', value: 'Referral Source'},
+  {key: 'notes', value: 'Notes'},
+  {key: 'applicationStatus', value: 'Application Status'}
+]
 
 const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
   const handleChange = e => {

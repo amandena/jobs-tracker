@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as Yup from 'yup'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
-import { updateJobForm } from '../actions/updateJobForm'
 import { addJob } from '../actions/addJob'
 import ScrollArrow from './ScrollArrow'
 
@@ -26,82 +25,63 @@ const jobFormInputs = [
   {key: 'applicationStatus', value: 'Application Status'}
 ]
 
-const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
-  const handleChange = e => {
-    const { name, value } = e.target
-    const updatedFormInfo = {
-      ...jobForm,
-      [name]: value
-    }
-    updateJobForm(updatedFormInfo)
-  }
+const JobForm = ({ addJob, history }) => {
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    addJob(jobForm, history)
-  }
-
-    return(
-      <div className='job-form container'>
-        <div className='spacer'/>
-        <h3>New Job Application</h3>
-        <Formik
-          initialValues={{
-            date: '',
-            companyName: '',
-            jobTitle: '',
-            applicationUrl: '',
-            referralSource: '',
-            notes: '',
-            applicationStatus: ''
-          }}
-          validationSchema={jobFormSchema}
-          onSubmit={async (values, {setStatus}) => {
-            const response = await addJob(values, history)
-            if (response && response.status >= 300) {
-              setStatus({message: "Something went wrong. Please try again later."})
-            }
-          }}  
-        >
-          {({ touched, errors, status}) => (
-            <Form>
-              <div className='row form-group'>
-                <div className='col-8 offset-2 spacer-xs mb-2'>
-                  {jobFormInputs.map(input => {
-                    return <div className='form-floating mb-1' key={input}>
-                      <Field 
-                        className={`form-control input-lg ${touched.input && errors.input ? "is-invalid" : ""}`}
-                        id={input}
-                        placeholder={input.value}
-                        type='text'
-                        name={input.key}
-                        autoComplete='off'
-                      />
-                      <label htmlFor={input}>{input.value}</label>
-                      <ErrorMessage name={input.key} className='invalid-feedback' component='div'/>
-                    </div>
-                  })}
-                </div>
-                <br/><br/>
-                <div className='col-8 offset-2 spacer-xs justify-content-center'>
-                  <input
-                    className='btn btn-secondary mb-3'
-                    type='submit'
-                  />
-                </div>
+  return (
+    <div className='job-form container'>
+      <div className='spacer'/>
+      <h3>New Job Application</h3>
+      <Formik
+        initialValues={{
+          date: '',
+          companyName: '',
+          jobTitle: '',
+          applicationUrl: '',
+          referralSource: '',
+          notes: '',
+          applicationStatus: ''
+        }}
+        validationSchema={jobFormSchema}
+        onSubmit={async (values, {setStatus}) => {
+          const response = await addJob(values, history)
+          if (response && response.status >= 300) {
+            setStatus({message: "Something went wrong. Please try again later."})
+          }
+        }}  
+      >
+        {({ touched, errors, status}) => (
+          <Form>
+            <div className='row form-group'>
+              <div className='col-8 offset-2 spacer-xs mb-2'>
+                {jobFormInputs.map(input => {
+                  return <div className='form-floating mb-1' key={input.key}>
+                    <Field 
+                      className={`form-control input-lg ${touched.input && errors.input ? "is-invalid" : ""}`}
+                      id={input}
+                      placeholder={input.value}
+                      type='text'
+                      name={input.key}
+                      autoComplete='off'
+                    />
+                    <label htmlFor={input}>{input.value}</label>
+                    <ErrorMessage name={input.key} className='invalid-feedback' component='div'/>
+                  </div>
+                })}
               </div>
-            </Form>
-          )}
-        </Formik>
-        <ScrollArrow/>
-      </div>
-    )
+              <br/><br/>
+              <div className='col-8 offset-2 spacer-xs justify-content-center'>
+                <input
+                  className='btn btn-secondary mb-3'
+                  type='submit'
+                />
+              </div>
+            </div>
+          </Form>
+        )}
+      </Formik>
+      <ScrollArrow/>
+    </div>
+  )
 }
 
-const mapStateToProps = state => {
-  return {
-    jobForm: state.mainReducer.jobForm
-  }
-}
-
-export default connect(mapStateToProps, { updateJobForm, addJob })(JobForm)
+export default connect(null, { addJob })(JobForm)

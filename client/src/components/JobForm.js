@@ -7,13 +7,13 @@ import { addJob } from '../actions/addJob'
 import ScrollArrow from './ScrollArrow'
 
 const jobFormSchema = Yup.object().shape({
-  date: Yup.string().required(),
-  companyName: Yup.string().required(),
-  jobTitle: Yup.string().required(),
-  applicationUrl: Yup.string().required(),
-  referralSource: Yup.string().required(),
-  notes: Yup.string().required(),
-  applicationStatus: Yup.string().required()
+  date: Yup.string().required('Please enter the date.'),
+  companyName: Yup.string().required('Please enter the company name.'),
+  jobTitle: Yup.string().required('Please enter the job title.'),
+  applicationUrl: Yup.string().required('Please enter the application URL.'),
+  referralSource: Yup.string().required('Please enter the referral source.'),
+  notes: Yup.string().required('Please enter any notes'),
+  applicationStatus: Yup.string().required('Please enter the status of your application.')
 })
 
 const jobFormInputs = [
@@ -45,127 +45,162 @@ const JobForm = ({ jobForm, updateJobForm, addJob, history }) => {
       <div className='job-form container'>
         <div className='spacer'/>
         <h3>New Job Application</h3>
-        <form onSubmit={handleSubmit}>
-          <div className='row form-group'>
-            <div className='col-8 offset-2 spacer-xs mb-1'>
-              <div className='form-floating'>
-                <input 
-                  className='form-control input-lg'
-                  id='dateFloat'
-                  type='text' 
-                  placeholder='Date' 
-                  name='date'
-                  value={jobForm.date}
-                  onChange={handleChange}
-                  autoComplete='off'
-                />
-                <label htmlFor='dateFloat'>Date</label>
+        <Formik
+          initialValues={{
+            date: '',
+            companyName: '',
+            jobTitle: '',
+            applicationUrl: '',
+            referralSource: '',
+            notes: '',
+            applicationStatus: ''
+          }}
+          validationSchema={jobFormSchema}
+          onSubmit={async (values, {setStatus}) => {
+            const response = await addJob(values, history)
+            if (response && response.status >= 300) {
+              setStatus({message: "Something went wrong. Please try again later."})
+            }
+          }}  
+        >
+          {({ touched, errors, status}) => (
+            <Form>
+              <div className='row form-group'>
+                <div className='col-8 offset-2 spacer-xs mb-2'>
+                  {jobFormInputs.map(input => {
+                    return <div className='form-floating mb-1' key={input}>
+                      <Field 
+                        className={`form-control input-lg ${touched.input && errors.input ? "is-invalid" : ""}`}
+                        id={input}
+                        placeholder={input.value}
+                        type='text'
+                        name={input.key}
+                        autoComplete='off'
+                      />
+                      <label htmlFor={input}>{input.value}</label>
+                      <ErrorMessage name={input.key} className='invalid-feedback' component='div'/>
+                    </div>
+                  })}
+                  {/* <div className='form-floating'>
+                    <input 
+                      className='form-control input-lg'
+                      id='dateFloat'
+                      type='text' 
+                      placeholder='Date' 
+                      name='date'
+                      value={jobForm.date}
+                      onChange={handleChange}
+                      autoComplete='off'
+                    />
+                    <label htmlFor='dateFloat'>Date</label>
+                  </div>
+                </div>
+                <div className='col-8 offset-2 spacer-xs mb-1'>
+                  <div className='form-floating'>
+                    <input 
+                      className='form-control input-lg'
+                      id='companyNameFloat'
+                      type='text' 
+                      placeholder='Company Name' 
+                      name='companyName'
+                      value={jobForm.companyName}
+                      onChange={handleChange}
+                      autoComplete='off'
+                    />
+                    <label htmlFor='companyNameFloat'>Company Name</label>
+                  </div>
+                </div>
+                <br/>
+                <div className='col-8 offset-2 spacer-xs mb-1'>
+                  <div className='form-floating'>
+                    <input
+                      className='form-control input-lg'
+                      id='jobTitleFloat'
+                      type='text'
+                      placeholder='Job Title'
+                      name='jobTitle'
+                      value={jobForm.jobTitle}
+                      onChange={handleChange}
+                      autoComplete='off'
+                    />
+                    <label htmlFor='jobTitleFloat'>Job Title</label>
+                  </div>
+                </div>
+                <br/>
+                <div className='col-8 offset-2 spacer-xs mb-1'>
+                  <div className='form-floating'>
+                    <input
+                      className='form-control input-lg'
+                      id='applicationUrlFloat'
+                      type='text'
+                      placeholder='Application URL'
+                      name='applicationUrl'
+                      value={jobForm.applicationUrl}
+                      onChange={handleChange}
+                      autoComplete='off'
+                    />
+                    <label htmlFor='applicationUrlFloat'>Application URL</label>
+                  </div>
+                </div>
+                <br/>
+                <div className='col-8 offset-2 spacer-xs mb-1'>
+                  <div className='form-floating'>
+                    <input
+                      className='form-control input-lg'
+                      id='referralSourceFloat'
+                      type='text'
+                      placeholder='Referral Source'
+                      name='referralSource'
+                      value={jobForm.referralSource}
+                      onChange={handleChange}
+                      autoComplete='off'
+                    />
+                    <label htmlFor='referralSourceFloat'>Referral Source</label>
+                  </div>
+                </div>
+                <br/>
+                <div className='col-8 offset-2 spacer-xs mb-1'>
+                  <div className='form-floating'>
+                    <input
+                      className='form-control input-lg'
+                      id='notesFloat'
+                      type='textarea'
+                      placeholder='Notes'
+                      name='notes'
+                      value={jobForm.notes}
+                      onChange={handleChange}
+                      autoComplete='off'
+                    />
+                    <label htmlFor='notesFloat'>Notes</label>
+                  </div>
+                </div>
+                <br/>
+                <div className='col-8 offset-2 spacer-xs mb-2'>
+                  <div className='form-floating'>
+                    <input
+                      className='form-control input-lg'
+                      id='applicationStatusFloat'
+                      type='text'
+                      placeholder='Application Status'
+                      name='applicationStatus'
+                      value={jobForm.applicationStatus}
+                      onChange={handleChange}
+                      autoComplete='off'
+                    />
+                    <label htmlFor='applicationStatusFloat'>Application Status</label>
+                  </div> */}
+                </div>
+                <br/><br/>
+                <div className='col-8 offset-2 spacer-xs justify-content-center'>
+                  <input
+                    className='btn btn-secondary mb-3'
+                    type='submit'
+                  />
+                </div>
               </div>
-            </div>
-            <div className='col-8 offset-2 spacer-xs mb-1'>
-              <div className='form-floating'>
-                <input 
-                  className='form-control input-lg'
-                  id='companyNameFloat'
-                  type='text' 
-                  placeholder='Company Name' 
-                  name='companyName'
-                  value={jobForm.companyName}
-                  onChange={handleChange}
-                  autoComplete='off'
-                />
-                <label htmlFor='companyNameFloat'>Company Name</label>
-              </div>
-            </div>
-            <br/>
-            <div className='col-8 offset-2 spacer-xs mb-1'>
-              <div className='form-floating'>
-                <input
-                  className='form-control input-lg'
-                  id='jobTitleFloat'
-                  type='text'
-                  placeholder='Job Title'
-                  name='jobTitle'
-                  value={jobForm.jobTitle}
-                  onChange={handleChange}
-                  autoComplete='off'
-                />
-                <label htmlFor='jobTitleFloat'>Job Title</label>
-              </div>
-            </div>
-            <br/>
-            <div className='col-8 offset-2 spacer-xs mb-1'>
-              <div className='form-floating'>
-                <input
-                  className='form-control input-lg'
-                  id='applicationUrlFloat'
-                  type='text'
-                  placeholder='Application URL'
-                  name='applicationUrl'
-                  value={jobForm.applicationUrl}
-                  onChange={handleChange}
-                  autoComplete='off'
-                />
-                <label htmlFor='applicationUrlFloat'>Application URL</label>
-              </div>
-            </div>
-            <br/>
-            <div className='col-8 offset-2 spacer-xs mb-1'>
-              <div className='form-floating'>
-                <input
-                  className='form-control input-lg'
-                  id='referralSourceFloat'
-                  type='text'
-                  placeholder='Referral Source'
-                  name='referralSource'
-                  value={jobForm.referralSource}
-                  onChange={handleChange}
-                  autoComplete='off'
-                />
-                <label htmlFor='referralSourceFloat'>Referral Source</label>
-              </div>
-            </div>
-            <br/>
-            <div className='col-8 offset-2 spacer-xs mb-1'>
-              <div className='form-floating'>
-                <input
-                  className='form-control input-lg'
-                  id='notesFloat'
-                  type='textarea'
-                  placeholder='Notes'
-                  name='notes'
-                  value={jobForm.notes}
-                  onChange={handleChange}
-                  autoComplete='off'
-                />
-                <label htmlFor='notesFloat'>Notes</label>
-              </div>
-            </div>
-            <br/>
-            <div className='col-8 offset-2 spacer-xs mb-2'>
-              <div className='form-floating'>
-                <input
-                  className='form-control input-lg'
-                  id='applicationStatusFloat'
-                  type='text'
-                  placeholder='Application Status'
-                  name='applicationStatus'
-                  value={jobForm.applicationStatus}
-                  onChange={handleChange}
-                  autoComplete='off'
-                />
-                <label htmlFor='applicationStatusFloat'>Application Status</label>
-              </div>
-            </div>
-            <br/><br/>
-            <div className='col-8 offset-2 spacer-xs justify-content-center'>
-              <input
-                className='btn btn-secondary mb-3'
-                type='submit'
-              />
-            </div>
-          </div>
-        </form>
+            </Form>
+          )}
+        </Formik>
         <ScrollArrow/>
       </div>
     )

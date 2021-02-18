@@ -15,16 +15,6 @@ const jobFormSchema = Yup.object().shape({
   applicationStatus: Yup.string().required('Please enter the status of your application.')
 })
 
-const jobFormInputs = [
-  {key: 'date', value: 'Date'},
-  {key: 'companyName', value: 'Company Name'},
-  {key: 'jobTitle', value: 'Job Title'},
-  {key: 'applicationUrl', value: 'Application URL'},
-  {key: 'referralSource', value: 'Referral Source'},
-  {key: 'notes', value: 'Notes'},
-  {key: 'applicationStatus', value: 'Application Status'}
-]
-
 const JobForm = ({ addJob, history }) => {
 
   return (
@@ -53,20 +43,102 @@ const JobForm = ({ addJob, history }) => {
           <Form>
             <div className='row form-group'>
               <div className='col-8 offset-2 spacer-xs mb-2'>
-                {jobFormInputs.map(input => {
-                  return <div className='form-floating mb-1' key={input.key}>
-                    <Field 
-                      className={`form-control input-lg ${touched.input && errors.input ? "is-invalid" : ""}`}
-                      id={input}
-                      placeholder={input.value}
-                      type='text'
-                      name={input.key}
-                      autoComplete='off'
-                    />
-                    <label htmlFor={input}>{input.value}</label>
-                    <ErrorMessage name={input.key} className='invalid-feedback' component='div'/>
-                  </div>
-                })}
+                <div className='form-floating mb-1'>
+                  <Field 
+                    className={`form-control input-lg ${touched.date && errors.date ? "is-invalid" : ""}`}
+                    id='dateField'
+                    placeholder='Date'
+                    type='text'
+                    name='date'
+                    autoComplete='off'
+                  />
+                  <label htmlFor='dateField'>Date</label>
+                  <ErrorMessage name='date' className='invalid-feedback text-start' component='div'/>
+                </div>
+              </div>
+              <div className='col-8 offset-2 spacer-xs mb-2'>
+                <div className='form-floating mb-1'>
+                  <Field 
+                    className={`form-control input-lg ${touched.companyName && errors.companyName ? "is-invalid" : ""}`}
+                    id='companyNameField'
+                    placeholder='Company Name'
+                    type='text'
+                    name='companyName'
+                    autoComplete='off'
+                  />
+                  <label htmlFor='companyNameField'>Company Name</label>
+                  <ErrorMessage name='companyName' className='invalid-feedback text-start' component='div'/>
+                </div>
+              </div>
+              <div className='col-8 offset-2 spacer-xs mb-2'>
+                <div className='form-floating mb-1'>
+                  <Field 
+                    className={`form-control input-lg ${touched.jobTitle && errors.jobTitle ? "is-invalid" : ""}`}
+                    id='jobTitleField'
+                    placeholder='Job Title'
+                    type='text'
+                    name='jobTitle'
+                    autoComplete='off'
+                  />
+                  <label htmlFor='jobTitleField'>Job Title</label>
+                  <ErrorMessage name='jobTitle' className='invalid-feedback text-start' component='div'/>
+                </div>
+              </div>
+              <div className='col-8 offset-2 spacer-xs mb-2'>
+                <div className='form-floating mb-1'>
+                  <Field 
+                    className={`form-control input-lg ${touched.applicationUrl && errors.applicationUrl ? "is-invalid" : ""}`}
+                    id='applicationUrlField'
+                    placeholder='Application URL'
+                    type='text'
+                    name='applicationUrl'
+                    autoComplete='off'
+                  />
+                  <label htmlFor='applicationUrlField'>Application URL</label>
+                  <ErrorMessage name='applicationUrl' className='invalid-feedback text-start' component='div'/>
+                </div>
+              </div>
+              <div className='col-8 offset-2 spacer-xs mb-2'>
+                <div className='form-floating mb-1'>
+                  <Field 
+                    className={`form-control input-lg ${touched.referralSource && errors.referralSource ? "is-invalid" : ""}`}
+                    id='referralSourceField'
+                    placeholder='Referral Source'
+                    type='text'
+                    name='referralSource'
+                    autoComplete='off'
+                  />
+                  <label htmlFor='referralSourceField'>Referral Source</label>
+                  <ErrorMessage name='referralSource' className='invalid-feedback text-start' component='div'/>
+                </div>
+              </div>
+              <div className='col-8 offset-2 spacer-xs mb-2'>
+                <div className='form-floating mb-1'>
+                  <Field 
+                    className={`form-control input-lg ${touched.notes && errors.notes ? "is-invalid" : ""}`}
+                    id='notesField'
+                    placeholder='Notes'
+                    type='text'
+                    name='notes'
+                    autoComplete='off'
+                  />
+                  <label htmlFor='notesField'>Notes</label>
+                  <ErrorMessage name='notes' className='invalid-feedback text-start' component='div'/>
+                </div>
+              </div>
+              <div className='col-8 offset-2 spacer-xs mb-2'>
+                <div className='form-floating mb-1'>
+                  <Field 
+                    className={`form-control input-lg ${touched.applicationStatus && errors.applicationStatus ? "is-invalid" : ""}`}
+                    id='applicationStatusField'
+                    placeholder='Application Status'
+                    type='text'
+                    name='applicationStatus'
+                    autoComplete='off'
+                  />
+                  <label htmlFor='applicationStatusField'>Application Status</label>
+                  <ErrorMessage name='applicationStatus' className='invalid-feedback text-start' component='div'/>
+                </div>
               </div>
               <br/><br/>
               {status && status.message ? <div className={`col-8 offset-2 text-center alert ${status >= 300 ? "alert-danger" : "alert-success"}`}>

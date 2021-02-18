@@ -69,10 +69,15 @@ const JobForm = ({ addJob, history }) => {
                 })}
               </div>
               <br/><br/>
+              {status && status.message ? <div className={`col-8 offset-2 text-center alert ${status >= 300 ? "alert-danger" : "alert-success"}`}>
+                {status.message}
+              </div> : null}
               <div className='col-8 offset-2 spacer-xs justify-content-center'>
-                <input
+                <Field
+                  id='jobSubmit'
                   className='btn btn-secondary mb-3'
                   type='submit'
+                  value='SUBMIT'
                 />
               </div>
             </div>

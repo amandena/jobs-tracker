@@ -43,7 +43,7 @@ const JobForm = ({ addJob, history }) => {
           <Form>
             <div className='row form-group'>
               <div className='col-8 offset-2 spacer-xs mb-2'>
-                <div className='form-floating mb-1'>
+                <div className='form-floating'>
                   <Field 
                     className={`form-control input-lg ${touched.date && errors.date ? "is-invalid" : ""}`}
                     id='dateField'
@@ -57,7 +57,7 @@ const JobForm = ({ addJob, history }) => {
                 </div>
               </div>
               <div className='col-8 offset-2 spacer-xs mb-2'>
-                <div className='form-floating mb-1'>
+                <div className='form-floating'>
                   <Field 
                     className={`form-control input-lg ${touched.companyName && errors.companyName ? "is-invalid" : ""}`}
                     id='companyNameField'
@@ -71,7 +71,7 @@ const JobForm = ({ addJob, history }) => {
                 </div>
               </div>
               <div className='col-8 offset-2 spacer-xs mb-2'>
-                <div className='form-floating mb-1'>
+                <div className='form-floating'>
                   <Field 
                     className={`form-control input-lg ${touched.jobTitle && errors.jobTitle ? "is-invalid" : ""}`}
                     id='jobTitleField'
@@ -85,7 +85,7 @@ const JobForm = ({ addJob, history }) => {
                 </div>
               </div>
               <div className='col-8 offset-2 spacer-xs mb-2'>
-                <div className='form-floating mb-1'>
+                <div className='form-floating'>
                   <Field 
                     className={`form-control input-lg ${touched.applicationUrl && errors.applicationUrl ? "is-invalid" : ""}`}
                     id='applicationUrlField'
@@ -99,7 +99,7 @@ const JobForm = ({ addJob, history }) => {
                 </div>
               </div>
               <div className='col-8 offset-2 spacer-xs mb-2'>
-                <div className='form-floating mb-1'>
+                <div className='form-floating'>
                   <Field 
                     className={`form-control input-lg ${touched.referralSource && errors.referralSource ? "is-invalid" : ""}`}
                     id='referralSourceField'
@@ -113,7 +113,7 @@ const JobForm = ({ addJob, history }) => {
                 </div>
               </div>
               <div className='col-8 offset-2 spacer-xs mb-2'>
-                <div className='form-floating mb-1'>
+                <div className='form-floating'>
                   <Field 
                     className={`form-control input-lg ${touched.notes && errors.notes ? "is-invalid" : ""}`}
                     id='notesField'
@@ -127,7 +127,7 @@ const JobForm = ({ addJob, history }) => {
                 </div>
               </div>
               <div className='col-8 offset-2 spacer-xs mb-2'>
-                <div className='form-floating mb-1'>
+                <div className='form-floating'>
                   <Field 
                     className={`form-control input-lg ${touched.applicationStatus && errors.applicationStatus ? "is-invalid" : ""}`}
                     id='applicationStatusField'

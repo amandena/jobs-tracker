@@ -51,7 +51,7 @@ const Search = ({ doSearch }) => {
                   id='searchSubmit'
                   className='btn btn-secondary mb-3'
                   type='submit' 
-                  value='Search'
+                  value='SEARCH'
                 />
               </div>
             </div>

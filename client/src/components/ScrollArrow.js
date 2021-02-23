@@ -26,7 +26,7 @@ const ScrollArrow = () => {
   }
 
   return (
-    <div className='float-end'>
+    <div className='offset-11'>
       <i className="fas fa-arrow-circle-up fa-2x">
         <FontAwesomeIcon 
           icon={faArrowCircleUp} 

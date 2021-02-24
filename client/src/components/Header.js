@@ -9,6 +9,7 @@ const Header = () => {
           <div className='row mainnav-text text-center'>
             <div className='col-sm-12'>
               <NavLink to='/'><h1>Jobs Tracker</h1></NavLink>
+              <NavLink className='mainnav-link' to='/'>Home</NavLink>
               <NavLink className='mainnav-link' to='/applications-tracker'>Applications</NavLink>
               <NavLink className='mainnav-link' to='/activity-tracker'>Activity</NavLink>
               <NavLink className='mainnav-link' to='/jobs/new'>New Job</NavLink>

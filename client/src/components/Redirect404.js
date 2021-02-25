@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Redirect} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Redirect } from 'react-router-dom'
 
 const Redirect404 = () => {
 
@@ -17,16 +17,16 @@ const Redirect404 = () => {
   }, 3000)
 
   return (
-    redirecting ? <Redirect push to="/" />
+    redirecting ? 
+      <Redirect push to="/" />
     :
-    <div>
-      <h1 className="text-center">
-        404
-      </h1>
-      <p className="text-center">Taking you back home in 3 seconds...</p>
-    </div>
+      <div>
+        <h1 className="text-center">
+          404
+        </h1>
+        <p className="text-center">Taking you back home in 3 seconds...</p>
+      </div>
   )
-
 }
 
 export default Redirect404

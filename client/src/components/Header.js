@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import * as Constants from '../helpers/routeConstants'
 
 const Header = () => {
   return(
@@ -8,11 +9,11 @@ const Header = () => {
         <div className='container-fluid'>
           <div className='row mainnav-text text-center'>
             <div className='col-sm-12'>
-              <NavLink to='/'><h1>Jobs Tracker</h1></NavLink>
-              <NavLink className='mainnav-link' to='/'>Home</NavLink>
-              <NavLink className='mainnav-link' to='/applications-tracker'>Applications</NavLink>
-              <NavLink className='mainnav-link' to='/activity-tracker'>Activity</NavLink>
-              <NavLink className='mainnav-link' to='/jobs/new'>New Job</NavLink>
+              <Link to={`${Constants.HOME_ROUTE}`}><h1>Jobs Tracker</h1></Link>
+              <NavLink className='mainnav-link' to={`${Constants.HOME_ROUTE}`}>Home</NavLink>
+              <NavLink className='mainnav-link' to={`${Constants.APPLICATIONS_TRACKER_ROUTE}`}>Applications</NavLink>
+              <NavLink className='mainnav-link' to={`${Constants.ACTIVITY_TRACKER_ROUTE}`}>Activity</NavLink>
+              <NavLink className='mainnav-link' to={`${Constants.NEW_JOB_ROUTE}`}>New Job</NavLink>
             </div>
           </div>
         </div>

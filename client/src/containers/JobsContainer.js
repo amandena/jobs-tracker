@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import Home from '../components/Home'
-import Job from '../components/Job'
 import Applications from '../components/Applications'
 import JobForm from '../components/JobForm'
 import ActivityTracker from '../components/ActivityTracker'
@@ -15,7 +14,6 @@ class JobsContainer extends React.Component {
           <Route exact path='/' component={Home}/>
           <Route path='/applications-tracker' component={Applications}/>
           <Route path='/jobs/new' component={JobForm}/>
-          <Route path='/jobs/:id' component={Job}/>
           <Route path='/activity-tracker' component={ActivityTracker}/>
           <Route path="*" component={Redirect404} />
         </Switch>

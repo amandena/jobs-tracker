@@ -24,5 +24,3 @@ class JobsContainer extends React.Component {
 }
 
 export default withRouter(JobsContainer)
-
-//make fetch request here for jobs to pass into Jobs and Job Routes

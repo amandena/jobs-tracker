@@ -9,20 +9,43 @@ const Job = () => {
         </div>
       </div>
       <div className='row'>
-        <div className='col-12'>
-          <h5>Start Date: 9/15/20</h5>
+        <div className='col-6 text-end'>
+          <label>Start Date:</label>
         </div>
-        <div className='col-12'>
-          <h5>Job Title: Internship</h5>
+        <div className='col-6 text-start'>
+          <p>9/15/20</p>
         </div>
-        <div className='col-12'>
-          <h5>Application URL: N/A - LinkedIn</h5>
+      </div>
+      <div className='row'>
+        <div className='col-6 text-end'>
+          <label>Job Title:</label>
         </div>
-        <div className='col-12'>
-          <h5>Referral Source: Medium Blog Post</h5>
+        <div className='col-6 text-start'>
+          <p>Internship</p>
         </div>
-        <div className='col-12'>
-          <h5>Application Status: Hired!</h5>
+      </div>
+      <div className='row'>
+        <div className='col-6 text-end'>
+          <label>Application URL:</label>
+        </div>
+        <div className='col-6 text-start'>
+          <p>N/A - LinkedIn</p>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col-6 text-end'>
+          <label>Referral Source:</label>
+        </div>
+        <div className='col-6 text-start'>
+          <p>Medium Blog Post</p>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col-6 text-end'>
+          <label>Application Status:</label>
+        </div>
+        <div className='col-6 text-start'>
+          <p>Hired!</p>
         </div>
       </div>
     </div>
